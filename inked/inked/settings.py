@@ -30,7 +30,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 if ENV == 'DEV':
   SECRET_KEY = 'django-insecure-7)js!e%(e!e=lv9fo4l@yv@3f5($k(afl+$-r&snjjlu00^nq5'
 else:
-  SECRET_KEY=str(os.getenv('SECRET_KEY'))
+  SECRET_KEY= str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = ENV == 'DEV'
@@ -62,7 +62,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOW_ALL_ORIGINS=True
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'inked.urls'
 
@@ -91,9 +91,9 @@ WSGI_APPLICATION = 'inked.wsgi.application'
 
 DATABASES = {}
 if ENV != 'DEV':
-     DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)	
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)	
 else:
-     DATABASES['default'] =  {
+    DATABASES['default'] =  {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'inked', 
         'HOST': 'localhost',
