@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'jwt_auth',
     'tattoos',
+    'reviews',
 ]
 
 MIDDLEWARE = [
@@ -142,6 +144,19 @@ STATIC_URL = 'static/'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'jwt_auth.authentication.JWTAuthentication',
+    ],
+}
+
+AUTH_USER_MODEL = 'jwt_auth.CustomUser'
+
 
 CSRF_TRUSTED_ORIGINS = ['https://sticknpoke.herokuapp.com']
 
