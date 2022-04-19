@@ -2,7 +2,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from tattoos.models import Tattoo
-# from jwt_auth.models import CustomUser
+from jwt_auth.models import CustomUser
 
 # this is the user that uses a build in Django method  
 # CustomUser = get_user_model()
@@ -15,4 +15,4 @@ class Review(models.Model):
   created_date = models.DateField(auto_now_add = True)
 
   def __str__(self):
-    return f'{self.tattoo} {self.tattoo.artist} - {self.text} by {self.owner} on {self.created_date}'
+    return f'{self.tattoo} {self.tattoo.artist} - {self.text} on {self.created_date}'
