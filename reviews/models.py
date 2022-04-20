@@ -2,7 +2,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from tattoos.models import Tattoo
-# from jwt_auth.models import CustomUser
 
 # this is the user that uses a build in Django method  
 User = get_user_model()

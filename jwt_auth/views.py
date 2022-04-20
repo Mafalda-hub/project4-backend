@@ -1,8 +1,3 @@
-
-# Create your views here.
-
-
-# Create your views here.
 from datetime import datetime, timedelta
 from time import strftime
 from rest_framework.views import APIView
