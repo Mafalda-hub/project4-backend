@@ -1,0 +1,24 @@
+[
+{
+  "model": "tattoos.tattoo",
+  "pk": 1,
+  "fields": {
+    "name": "first tattoo",
+    "artist": null,
+    "description": "simple",
+    "image": "",
+    "categories": []
+  }
+},
+{
+  "model": "tattoos.tattoo",
+  "pk": 3,
+  "fields": {
+    "name": "third tattoo",
+    "artist": null,
+    "description": "ok",
+    "image": "",
+    "categories": []
+  }
+}
+]
