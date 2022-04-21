@@ -4,7 +4,8 @@ from .views import *
 urlpatterns = [
     # Generic views for books
     path('tattoos/', TattooList.as_view()),
-    path('tattoos/create/', TattooCreate.as_view()),
+
+    path('tattoos/create', TattooCreate.as_view()),
 
     path('tattoos/<int:pk>/', TattooUpdateDestroy.as_view()),
 
