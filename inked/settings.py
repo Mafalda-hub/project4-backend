@@ -155,7 +155,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-AUTH_USER_MODEL = 'jwt_auth.CustomUser'
+# AUTH_USER_MODEL = 'jwt_auth.CustomUser'
 
 
 CSRF_TRUSTED_ORIGINS = ['https://sticknpoke.herokuapp.com']
