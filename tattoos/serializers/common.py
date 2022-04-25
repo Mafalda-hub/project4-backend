@@ -3,6 +3,8 @@ from rest_framework import serializers
 from reviews.serializers import PopulatedReviewSerializer
 from ..models import *
 
+# !TATTOOS
+
 class TattooSerializer(serializers.ModelSerializer):
   class Meta:
     model = Tattoo
@@ -18,9 +20,12 @@ class CategorySerializer(serializers.ModelSerializer):
     model = Category
     fields = ('__all__')
 
+class PopulatedCategorySerializer(CategorySerializer):
+  tattoos = TattooSerializer(many= True)
+
 class PopulatedTattooSerializer(TattooSerializer):
   artist = ArtistSerializer()
-  categories = CategorySerializer(many=True)
+  category = CategorySerializer(many=True)
   reviews = PopulatedReviewSerializer(many=True)
 
 

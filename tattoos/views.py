@@ -25,13 +25,13 @@ class TattooDetail(RetrieveAPIView):
 
 
 class ArtistListCreate(APIView):
-    # List Authors
+    # List artist
     def get(self, request):
         artists = Artist.objects.all()
         serialized_artists = PopulatedArtistSerializer(artists, many=True)
         return Response(data=serialized_artists.data, status=status.HTTP_200_OK)
 
-    # Create Author
+    # Create artist
     def post(self, request):
         artist_serializer = ArtistSerializer(data=request.data)
         if artist_serializer.is_valid():
@@ -66,3 +66,9 @@ class ArtistRetrieveUpdateDelete(APIView):
         except Artist.DoesNotExist:
             
             raise NotFound(detail="Can't find that artist")
+
+class CategoryListView(APIView):
+  def get(self, _request):
+    categories = Category.objects.all()
+    serialized_categories = PopulatedCategorySerializer (categories, many=True)
+    return Response(serialized_categories.data, status=status.HTTP_200_OK)

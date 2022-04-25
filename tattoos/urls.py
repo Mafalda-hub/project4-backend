@@ -14,4 +14,6 @@ urlpatterns = [
     path('artists/', ArtistListCreate.as_view()),
     path('artists/<int:pk>/',ArtistRetrieveUpdateDelete.as_view()),
 
+    path('categories/', CategoryListView.as_view()),
+
 ]
