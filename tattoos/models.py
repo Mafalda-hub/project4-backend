@@ -18,7 +18,7 @@ class Tattoo(models.Model):
   artist = models.ForeignKey(Artist, related_name='tattoos', on_delete=models.CASCADE, null=True)
   description = models.CharField(max_length=200)
   image = models.CharField(max_length=200, blank=True)
-  category = models.ForeignKey(Category, related_name='tattoos', on_delete=models.CASCADE, blank=True)
+  category = models.ForeignKey(Category, related_name='tattoos', on_delete=models.CASCADE, blank=True, null=True)
 
   def __str__(self):
     return self.name
